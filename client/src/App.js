@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect , useState } from "react";
+import Navbar from "./components/navbar";
+import Restaurant from "./components/restuarants";
 
 function App() {
 const [restaurants , setRestaurants] = useState([])
@@ -10,8 +12,24 @@ useEffect(()=>{
   setRestaurants(res.data)
  })
 },[])
-console.log(restaurants);
-  return <h1>Hello from React!</h1>;
+  return (
+    <div>
+       <Navbar/>
+    <div  className="container">
+      {restaurants.map((rest)=>{
+        return(
+          <div className="containers" key={rest.id}>
+            <Restaurant
+             name = {rest.name}
+             address ={rest.address}
+            />
+          </div>
+        )
+      })}
+     
+      </div>
+    </div>
+  )
 }
 
 export default App;
