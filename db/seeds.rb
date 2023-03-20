@@ -29,8 +29,8 @@ Restaurant.all.each do |restaurant|
   Pizza.all.each do |pizza|
     RestaurantPizza.create(
       price: Faker::Number.decimal(l_digits: 2),
-      restaurant_id: restaurant.id,
-      pizza_id: pizza.id
+      Restaurant_id: restaurant.id,
+      Pizza_id: pizza.id
     )
   end
 end
