@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 export default function Pizza() {
   const [pizzas, setPizzas] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/pizzas").then((res) => {
+    axios.get(" https://challenge-8bmq.onrender.com/pizzas").then((res) => {
       setPizzas(res.data);
     });
   }, []);

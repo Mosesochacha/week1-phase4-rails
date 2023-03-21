@@ -19,9 +19,37 @@
 
       - click on the the fork button in the top most rigt corner of the github to fork the repo to your own account
 
+#### backend deployment
+
+https://challenge-8bmq.onrender.com
+
 ## Running and testing
 
-Running the application is very straight forward. You can use the following steps to run the app.
+## Running the application is very straight forward. You can use the following steps to run the app.
+
+-Ensure you have thunder client extension installed or postman to test this requiremnts
+
+## deliverables Endpoints
+
+##### GET /restaurants
+
+            https://challenge-8bmq.onrender.com/restaurants
+
+###### GET /restaurants/:id
+
+         https://challenge-8bmq.onrender.com/restaurants/:id
+
+##### GET /pizzas
+
+       https://challenge-8bmq.onrender.com/pizzas
+
+##### DELETE /restaurants/:id
+
+               https://challenge-8bmq.onrender.com/restaurants/:id
+
+##### POST /restaurant_pizzas
+
+                https://challenge-8bmq.onrender.com/restaurant_pizzas
 
 - Before testing this application you need to do the following in your terminal:
 
@@ -54,7 +82,7 @@ Moses Ochacha
 
 ## Tech Stack
 
-        - Sinatra
+        - Rails
         - Bootstrap
        -Active Record
         - JavaScript

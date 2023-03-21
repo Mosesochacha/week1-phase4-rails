@@ -24,7 +24,7 @@ export default function Restaurant({ name, address, id, updateId }) {
           <NavLink onClick={()=>{
             updateId(id)
           }} exact to = "/restaurant_details" className="btn btn-primary">
-            Go somewhere
+            ShowPizzaDetails
           </NavLink>
           <button
             onClick={(e) => {
