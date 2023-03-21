@@ -24,7 +24,7 @@ class RestaurantPizzasController < ApplicationController
 end
 
 
-  # PATCH/PUT /restaurant_pizzas/1
+  # PATCH/P /restaurant_pizzas/1
   def update
     if @restaurant_pizza.update(restaurant_pizza_params)
       render json: @restaurant_pizza
