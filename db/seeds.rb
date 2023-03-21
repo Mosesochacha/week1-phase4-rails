@@ -22,7 +22,7 @@ end
 Restaurant.all.each do |restaurant|
   Pizza.all.each do |pizza|
     restaurant_pizza = restaurant.restaurant_pizzas.create!(
-      price: Faker::Commerce.price(range: 5..20),
+      price: Faker::Commerce.price(range: 1..30),
       pizza_id: pizza.id
     )
   end
