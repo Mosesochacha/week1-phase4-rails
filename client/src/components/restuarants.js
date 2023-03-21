@@ -20,9 +20,9 @@ export default function Restaurant({ name, address, id }) {
             Go somewhere
           </a>
           <button
-            onClick={() => {
+            onClick={(e) => {
               handleDelete();
-              
+              // history.push("/")
             }}
           >
             Delete

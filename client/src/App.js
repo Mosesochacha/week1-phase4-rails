@@ -4,7 +4,8 @@ import Navbar from "./components/navbar";
 import Restaurant from "./components/restuarants";
 // import RestaurantId from "./components/restaurantid";
 import Pizza from "./components/pizzas";
-
+import RestaurantPizzas from "./components/addpizzarestuarant";
+import { BrowserRouter, Route } from "react-router-dom";
 function App() {
   const [restaurants, setRestaurants] = useState([]);
 
@@ -15,20 +16,31 @@ function App() {
   }, []);
   return (
     <div>
+      
+      <BrowserRouter>
       <Navbar />
-      <div className="container">
-        {restaurants.map((rest) => {
-          return (
-            <div className="containers" key={rest.id}>
-              <Restaurant name={rest.name} address={rest.address} id = {rest.id} />
-            </div>
-          );
-        })}
-
-        {/* <RestaurantId/> */}
-      </div>
-      <Pizza />
-      {/* <RestaurantId/> */}
+        <Route exact path="/">
+          <div className="container">
+            {restaurants.map((rest) => {
+              return (
+                <div className="containers" key={rest.id}>
+                  <Restaurant
+                    name={rest.name}
+                    address={rest.address}
+                    id={rest.id}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </Route>
+        <Route exact path="/add">
+          <RestaurantPizzas />
+        </Route>
+        <Route exact path="/pizza">
+          <Pizza />
+        </Route>
+      </BrowserRouter>
     </div>
   );
 }

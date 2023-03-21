@@ -2,11 +2,12 @@ require 'faker'
 puts "seeding ...."
 # Create 10 Pizzas
 10.times do
-  Pizza.create!(
+  pizza = Pizza.create!(
     name: Faker::Food.dish,
-    ingredients: Faker::Food.ingredient,
-    image: Faker::LoremFlickr.image(size: "300x300", search_terms: ['pizza'])
+    ingredients: Faker::Food.ingredient
   )
+  pizza.image = Faker::LoremFlickr.image(size: "300x300", search_terms: [pizza.id, 'pizza'])
+  pizza.save
 end
 
 # Create 5 Restaurants
