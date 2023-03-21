@@ -10,7 +10,7 @@ function RestaurantDetails({userId}) {
     axios.get(`https://challenge-8bmq.onrender.com/restaurants/${userId}`).then((res) => {
       setUserDetails(res.data);
     });
-  }, []);
+  }, [userId]);
 
   console.log(userDetails)
 
