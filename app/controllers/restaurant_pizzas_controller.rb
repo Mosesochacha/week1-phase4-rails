@@ -1,32 +1,41 @@
 class RestaurantPizzasController < ApplicationController
-  before_action :set_restaurant_pizza, only: %i[ show edit update destroy ]
+  before_action :set_restaurant_pizza, only: %i[ show update destroy ]
 
-  # GET /restaurant_pizzas or /restaurant_pizzas.json
+  # GET /restaurant_pizzas
   def index
     @restaurant_pizzas = RestaurantPizza.all
+
+    render json: @restaurant_pizzas
   end
 
-  # POST /restaurant_pizzas or /restaurant_pizzas.json
+  # GET /restaurant_pizzas/1
+  def show
+    render json: @restaurant_pizza
+  end
+
+  # POST /restaurant_pizzas
   def create
-    @restaurant_pizza = Pizza.find(params[:pizza_id]).restaurant_pizzas.build(
-      restaurant_id: params[:restaurant_id],
-      price: params[:price]
-    )
-
-    if @restaurant_pizza.save
-      render json: @restaurant_pizza.pizza, status: :created
+    restaurant_pizza = RestaurantPizza.new(restaurant_pizza_params)
+    if restaurant_pizza.save
+      render json: restaurant_pizza.pizza
     else
-      render json: { errors: @restaurant_pizza.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: restaurant_pizza.errors.full_messages }, status: :unprocessable_entity
     end
-  end
+end
 
-  # PATCH/PUT /restaurant_pizzas/1 or /restaurant_pizzas/1.json
+
+  # PATCH/PUT /restaurant_pizzas/1
   def update
     if @restaurant_pizza.update(restaurant_pizza_params)
-      render json: @restaurant_pizza, status: :ok
+      render json: @restaurant_pizza
     else
-      render json: { errors: @restaurant_pizza.errors.full_messages }, status: :unprocessable_entity
+      render json: @restaurant_pizza.errors, status: :unprocessable_entity
     end
+  end
+
+  # DELETE /restaurant_pizzas/1
+  def destroy
+    @restaurant_pizza.destroy
   end
 
   private
@@ -37,6 +46,6 @@ class RestaurantPizzasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_pizza_params
-      params.require(:restaurant_pizza).permit(:price, :restaurant_id, :pizza_id)
+      params.require(:restaurant_pizza).permit(:price , :restaurant_id , :pizza_id)
     end
 end

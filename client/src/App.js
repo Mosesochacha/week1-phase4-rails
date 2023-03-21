@@ -20,7 +20,7 @@ function App() {
         {restaurants.map((rest) => {
           return (
             <div className="containers" key={rest.id}>
-              <Restaurant name={rest.name} address={rest.address} />
+              <Restaurant name={rest.name} address={rest.address} id = {rest.id} />
             </div>
           );
         })}

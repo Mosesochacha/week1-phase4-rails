@@ -2,10 +2,6 @@
 
 one:
   price: 1.5
-  Restaurant: one
-  Pizza: one
 
 two:
   price: 1.5
-  Restaurant: two
-  Pizza: two
