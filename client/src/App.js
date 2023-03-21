@@ -6,19 +6,27 @@ import Restaurant from "./components/restuarants";
 import Pizza from "./components/pizzas";
 import RestaurantPizzas from "./components/addpizzarestuarant";
 import { BrowserRouter, Route } from "react-router-dom";
+import RestaurantDetails from "./components/restaurant_details";
 function App() {
   const [restaurants, setRestaurants] = useState([]);
+  
+  const[userId,setUserId] = useState('');
 
   useEffect(() => {
     axios.get("https://challenge-8bmq.onrender.com/restaurants").then((res) => {
       setRestaurants(res.data);
     });
   }, []);
+
+function updateId(value){
+  setUserId(value)
+  console.log(value)
+}
+
   return (
     <div>
-      
       <BrowserRouter>
-      <Navbar />
+        <Navbar />
         <Route exact path="/">
           <div className="container">
             {restaurants.map((rest) => {
@@ -28,6 +36,7 @@ function App() {
                     name={rest.name}
                     address={rest.address}
                     id={rest.id}
+                    updateId = {updateId}
                   />
                 </div>
               );
@@ -39,6 +48,9 @@ function App() {
         </Route>
         <Route exact path="/pizza">
           <Pizza />
+        </Route>
+        <Route exact path="/restaurant_details">
+          <RestaurantDetails userId={userId} />
         </Route>
       </BrowserRouter>
     </div>
