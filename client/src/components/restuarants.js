@@ -6,7 +6,7 @@ export default function Restaurant({ name, address, id }) {
   // const history = useHistory();
 
   const handleDelete = () => {
-    fetch(`http://localhost:3000/restaurants/${id}`, { method: "DELETE" })
+    fetch(`https://challenge-8bmq.onrender.com/restaurants/${id}`, { method: "DELETE" })
       .then(() => setRestaurants(restaurants.filter((r) => r.id !== id)))
       .catch((error) => console.error(error));
   };

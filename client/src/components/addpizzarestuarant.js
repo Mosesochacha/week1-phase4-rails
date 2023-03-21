@@ -15,7 +15,7 @@ export default function RestaurantPizzas() {
       pizza_id
     };
     try {
-      const res = await fetch("http://localhost:3000/restaurant_pizzas", {
+      const res = await fetch("https://challenge-8bmq.onrender.com/restaurant_pizzas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

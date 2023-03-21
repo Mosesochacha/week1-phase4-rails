@@ -10,7 +10,7 @@ function App() {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/restaurants").then((res) => {
+    axios.get("https://challenge-8bmq.onrender.com/restaurants").then((res) => {
       setRestaurants(res.data);
     });
   }, []);

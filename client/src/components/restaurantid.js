@@ -5,7 +5,7 @@ export default function RestaurantId(id) {
   const [restaurant, setRestaurantsId] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/restaurants/1`).then((res) => {
+    axios.get(`https://challenge-8bmq.onrender.com/restaurants/1`).then((res) => {
       setRestaurantsId(res.data);
     });
   }, [id]);
