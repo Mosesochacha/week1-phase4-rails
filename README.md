@@ -22,6 +22,8 @@
 #### backend deployment
 
 https://challenge-8bmq.onrender.com
+## fronend link 
+https://codepiza.vercel.app/
 
 ## Running and testing
 
