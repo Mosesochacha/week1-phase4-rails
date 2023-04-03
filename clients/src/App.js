@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
 import Restaurant from "./components/restuarants";
@@ -11,12 +11,12 @@ function App() {
   const [restaurants, setRestaurants] = useState([]);
   
   const[userId,setUserId] = useState('');
-
-  useEffect(() => {
-    axios.get("https://challenge-8bmq.onrender.com/restaurants").then((res) => {
-      setRestaurants(res.data);
-    });
-  }, []);
+useEffect(() => {
+  fetch("https://challenge-8bmq.onrender.com/restaurants")
+    .then((response) => response.json())
+    .then((data) => setRestaurants(data))
+    .catch((error) => console.log(error));
+}, []);
 
 function updateId(value){
   setUserId(value)
