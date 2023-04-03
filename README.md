@@ -29,7 +29,7 @@ https://codepiza.vercel.app/
 
 ## Running the application is very straight forward. You can use the following steps to run the app.
 
--Ensure you have thunder client extension installed or postman to test this requiremnts
+-Ensure you have thunder client extension installed or postman to test this requiremnts Use the folling links totest
 
 ## deliverables Endpoints
 
@@ -61,7 +61,9 @@ https://codepiza.vercel.app/
     Then open another terminal and run
 
     rails s
-
+    
+    ## frontent github 
+    https://github.com/Mosesochacha/codepiza
     # Pizza
 
     onclick gets pizza
