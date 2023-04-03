@@ -1,6 +1,0 @@
-.container{
-  font-family: "Times New Roman", Times, serif;
-  display: grid;
-  grid-template-columns: auto  auto auto;
-  justify-content: space-between;
-}
